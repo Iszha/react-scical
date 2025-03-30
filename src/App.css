@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#tsparticles {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+
+.calculator {
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 2rem auto;
+  font-family: 'Poppins', sans-serif;
+  width: 95%;
+}
+
+.display {
+  width: 100%;
+  height: 70px;
+  margin-bottom: 25px;
+  padding: 15px;
+  font-size: 28px;
+  font-family: 'Poppins', sans-serif;
+  text-align: right;
+  background-color: #f8f1e3; 
+  border: none;
+  border-radius: 12px;
+  color: #333333;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 4px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.number {
+  background-color: #ebe6db;
+  color: #3a3a3a; 
+}
+
+.operator {
+  background-color: #a2d39b; 
+  color: #2c3e2f; 
+  font-weight: 600;
+}
+
+
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 768px) {
+  .calculator {
+    margin: 1rem auto;
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .buttons {
+    gap: 6px;
+  }
+  
+  .btn {
+    height: 35px;
+    font-size: 13px;
+    padding: 6px 3px;
+  }
+
+  .display {
+    height: 60px;
+    font-size: 24px;
+    padding: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .calculator {
+    margin: 0.5rem auto;
+    padding: 15px;
+    max-width: 98%;
+    border-radius: 15px;
+  }
+
+  .buttons {
+    gap: 4px;
+  }
+  
+  .btn {
+    height: 32px;
+    font-size: 12px;
+    padding: 4px 2px;
+  }
+
+  .display {
+    height: 50px;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .calculator {
+    padding: 10px;
+    margin: 0.25rem auto;
+    width: 100%;
+  }
+
+  .buttons {
+    gap: 3px;
+  }
+  
+  .btn {
+    height: 30px;
+    font-size: 11px;
+    padding: 3px 1px;
+  }
+
+  .display {
+    height: 45px;
+    font-size: 18px;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+}
+
+.app {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+h1 {
+  color: #2d5548;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 2rem;
+}
+
+.mode-toggle {
+  background-color: #4CAF50 !important;
+  color: white !important;
+  font-weight: bold;
+  grid-column: 6;
+  grid-row: 1;
+}
+
+.mode-toggle:hover {
+  background-color: #45a049 !important;
+}
