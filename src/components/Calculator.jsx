@@ -15,13 +15,20 @@ const Calculator = () => {
     if (value === '=') {
       try {
         let expression = display;
-        if (isDegree && (expression.includes('sin(') || expression.includes('cos(') || expression.includes('tan('))) {
-          // Convert degree to radian before calculation
-          expression = expression.replace(/sin\(/g, 'sin(pi/180*');
-          expression = expression.replace(/cos\(/g, 'cos(pi/180*');
-          expression = expression.replace(/tan\(/g, 'tan(pi/180*');
+        if (isDegree) {
+          if (expression.includes('sin(') || expression.includes('cos(') || expression.includes('tan(')) {
+            expression = expression.replace(/(?<!a)sin\(/g, 'sin(pi/180*');
+            expression = expression.replace(/(?<!a)cos\(/g, 'cos(pi/180*');
+            expression = expression.replace(/(?<!a)tan\(/g, 'tan(pi/180*');
+          }
+          let result = math.evaluate(expression);
+          if (expression.includes('asin(') || expression.includes('acos(') || expression.includes('atan(')) {
+            result = result * 180 / Math.PI;
+          }
+          setDisplay(result.toString());
+        } else {
+          setDisplay(math.evaluate(expression).toString());
         }
-        setDisplay(math.evaluate(expression).toString());
       } catch (error) {
         setDisplay('Error');
       }
